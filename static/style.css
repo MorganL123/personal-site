@@ -1,86 +1,70 @@
-html, body {
-  height: 100%;
-  margin: 0px;
+/* Reset some default styles */
+body, h1, p, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.library {
-    color: lightgray;
-    letter-spacing: 5px;
-    font-family: "Lucida Console", "Courier New", monospace;
-    background-color: rosybrown;
-  }
-
-  .all {
-  position: absolute;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  }
-  
-  .library-pic {
-    /* The image used */
-    background-image: url("https://cdn.wallpapersafari.com/0/80/KIiEkW.jpg");
-  
-    /* Full height */
-    height: 100%; 
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .typed-out {
-    overflow: hidden;
-    border-right: .15em solid ;
-    white-space: nowrap;
-    animation: 
-    typing 2s steps(20, end) forwards;
-    font-size: 1.6rem;
-    width: 0;
-  }
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-
-.genre {
-  left: 80%;
+body {
+  font-family: 'EB Garamond', serif;
+  background: linear-gradient(135deg, #e2e2e2 0%, #ffffff 100%);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   text-align: center;
 }
 
-select {
-  width: 50%;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: rosybrown;
-  text-align:center;
-  color: white;
-  letter-spacing: 5px;
-  font-family: "Lucida Console", "Courier New", monospace;
-  font-size: 15px;
-  margin-right: 1px;
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+}
+
+.title {
+  font-size: 5rem;
+  color: rgb(255, 59, 102);
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
-input { 
-  width: 50%;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: rosybrown;
-  text-align:center;
-  color: white;
-  letter-spacing: 5px;
-  font-family: "Lucida Console", "Courier New", monospace;
-  font-size: 15px;
+.subtitle {
+  font-size: 1.8rem;
+  color: #666;
+  margin-bottom: 30px;
 }
 
+.links-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 
+.links-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.link {
+  font-size: 1.5rem;
+  color: #0077cc;
+  text-decoration: none;
+  margin: 10px 0;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+}
 
-
-
+.link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
