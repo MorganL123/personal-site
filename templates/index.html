@@ -9,24 +9,76 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
 </head>
-  <body>
-    <div class="card">
-      <h1 class="title">morgan lin.</h1>
-      <p class="subtitle">Social Impact and Tech Entrepreneur</p>
-      <div class="links-container">
-          <div class="links-column">
-              <a href="#" class="link">Link 1</a>
-              <a href="#" class="link">Link 2</a>
-              <a href="#" class="link">Link 3</a>
-              <a href="#" class="link">Link 4</a>
-          </div>
-          <div class="links-column">
-              <a href="#" class="link">Link 5</a>
-              <a href="#" class="link">Link 6</a>
-              <a href="#" class="link">Link 7</a>
-              <a href="#" class="link">Link 8</a>
-          </div>
-      </div>
-  </div>
+
+<script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="title-container">
+        <h1 id="title" class="title"></h1>
+    </div>
+
+    <p class="paragraph">
+        I am a senior in New York, passionate about the intersection of technology and social impact. Enthusiastic about computer science, I am dedicated to bridging the gender gap in tech and addressing the digital divide. As a committed advocate for equitable computer science education and children's rights, I aim to continue empowering youth and support underrepresented communities through enhanced digital literacy and responsible tech.
+    </p>
+
+    <div class="links-container">
+        <div class="link-column">
+            <a href="https://www.littleleaguecoding.com/" class="link">Little League Coding</a>
+            <a href="https://www.unicefusa.org/about-unicef-usa/leadership/youth-leadership" class="link">UNICEF Youth Rep</a>
+            <a href="https://www.banfacialrecognition.com/" class="link">Encode Justice</a>
+            <a href="https://girlcon.org/" class="link">GirlCon Tech</a>
+            <a href="https://girlswritenow.org/author/morgan-lin/" class="link">Girls Write Now</a>
+        </div>
+        <div class="link-column">
+            <a href="https://codenext.withgoogle.com/" class="link">Google Code Next</a>
+            <a href="https://www.canva.com/design/DAGK9HjNQM0/cfg5hWjHE1WdsxLWPSSpHQ/view?utm_content=DAGK9HjNQM0&utm_campaign=designshare&utm_medium=link&utm_source=editor" class="link">ARISE @ NYU Tandon</a>
+            <a href="https://www.youtube.com/watch?v=J2CzWHs1tlY" class="link">NASA SEES AQI</a>
+            <a href="https://www.congressionalappchallenge.us/21-ny08/" class="link">Pathways to College</a>
+            <a href="https://www.disneydreamersacademy.com/dreamers/2023/" class="link">Disney Dreamers</a>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="/photos" class="arrow" id="prevArrow">&#8592;</a>
+        <div class="icons-container" id="iconsContainer">
+            <a href="#gmail" class="icon"><img src="https://mailmeteor.com/logos/assets/PNG/Gmail_Logo_512px.png" alt="Gmail" width="40" height="40"></a>
+            <a href="#linkedin" class="icon"><img src="https://static-00.iconduck.com/assets.00/linkedin-icon-512x512-3ax9x043.png" alt="LinkedIn" width="40" height="40"></a>
+            <a href="#github" class="icon"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="40" height="40"></a>
+        </div>
+        <a href="/floral" class="arrow" id="nextArrow">&#8594;</a>
+    </div>
+
+    <script>
+        const titles = ["Hi, my name is Morgan.", "Welcome to my website"];
+        let currentTitleIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let titleElement = document.getElementById('title');
+
+        function typeTitle() {
+            const currentTitle = titles[currentTitleIndex];
+            
+            if (isDeleting) {
+                titleElement.textContent = currentTitle.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+            } else {
+                titleElement.textContent = currentTitle.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+            }
+
+            if (!isDeleting && currentCharIndex === currentTitle.length) {
+                isDeleting = true;
+                setTimeout(typeTitle, 2000); // Wait 2 seconds before deleting
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+                setTimeout(typeTitle, 500); // Wait 0.5 seconds before typing next title
+            } else {
+                setTimeout(typeTitle, isDeleting ? 50 : 100); // Type faster than delete
+            }
+        }
+
+        typeTitle(); // Start the animation
+    </script>
 </body>
 </html>
