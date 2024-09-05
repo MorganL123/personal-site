@@ -18,5 +18,20 @@ def floral():
     print("Florals page accessed")
     return render_template('floral.html')
 
+@app.route('/thoughts')
+def thoughts():
+    print("Thoughts page accessed")
+    return render_template('thoughts.html')
+
+@app.route('/questions')
+def questions():
+    print("Questions page accessed")
+    return render_template('questions.html')
+
+@app.route('/lexicon')
+def lexicon():
+    print("Lexicon page accessed")
+    return render_template('lexicon.html')
+
 if __name__== '__main__':
     app.run(debug=True, host ='0.0.0.0', port = 9000)
