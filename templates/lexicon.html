@@ -48,9 +48,16 @@
 }
 
 .example {
-    background-color: yellow;
-    font-style: italic;
+  background-image: linear-gradient(120deg, #efcdff 0%, #ffb464 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.35em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  display: inline;
+  &:hover {
+    background-size: 100% 80%;
     display: inline;
+  }
 }
 
         .paragraph {
@@ -130,7 +137,7 @@
                 <div class="example"> The sour lemons fall from the sky, leaving many with burning eyes and acerbic tastes in their mouths </div>
             </li>
 
-    <p>Other words/phrases that sound mellifluous to my ear or I drop them in convos to sound smart (either/or but no foul here)</p>
+    <p>Other words/phrases that sound mellifluous to my ear or I drop them in convos to sound smart </p>
    
     
     <div class = "mellifluous-phrases">

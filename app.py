@@ -18,10 +18,10 @@ def floral():
     print("Florals page accessed")
     return render_template('floral.html')
 
-@app.route('/thoughts')
-def thoughts():
-    print("Thoughts page accessed")
-    return render_template('thoughts.html')
+@app.route('/writing')
+def publications():
+    print("Writing page accessed")
+    return render_template('writing.html')
 
 @app.route('/questions')
 def questions():

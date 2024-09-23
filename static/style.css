@@ -35,17 +35,19 @@ body {
 
 .links-container {
   display: flex;
-  justify-content: center;
-  gap: 400px; /* Increased spacing between columns */
-  margin-bottom: 40px;
+  justify-content: space-between; /* Ensures even spacing between columns */
+  gap: 50px; /* Optional, you can adjust the spacing between columns */
   width: 100%;
   max-width: 800px;
+  margin: 0 auto; 
+  margin-bottom: 40px;
 }
 
 .link-column {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px; /* Spacing between the links in each column */
 }
 
 .link {
@@ -56,7 +58,20 @@ body {
   font-size: 1.2em;
   position: relative;
   overflow: hidden;
+
+  background-image: linear-gradient(120deg, #efcdff 0%, #ffb464 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  display: inline;
+  &:hover {
+    background-size: 100% 80%;
+    display: inline;
+  }
 }
+
+
 
 .link::before {
   content: '';
